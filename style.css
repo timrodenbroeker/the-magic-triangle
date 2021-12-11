@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin:0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    width: 100%;
+    height: 100vh;
+
+}
+
+#ui {
+    padding: 15px;
+}
+
+#sketch {
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+}
+
+canvas {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+  }
