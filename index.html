@@ -8,11 +8,18 @@
 <body>
     <main>
         <div id="ui">
-            <textarea id="title" placeholder="title"></textarea>
-            <textarea id="rule1" placeholder="rule 1"></textarea>
-            <textarea id="rule2" placeholder="rule 2"></textarea>
-            <textarea id="rule3" placeholder="rule 3"></textarea>
-            <button onclick="saveImage()">Save</button>
+            <textarea id="title" rows="3" placeholder="title">title</textarea>
+            <textarea id="rule1" rows="3" placeholder="rule 1">rule 1</textarea>
+            <textarea id="rule2" rows="3" placeholder="rule 2">rule 2</textarea>
+            <!-- <textarea id="rule3" placeholder="rule 3"></textarea> -->
+
+            <div style="display:flex;">
+                <input type="color" id="bg" name="bg"
+                value="#FFFF00">
+                <input type="color" id="fg" name="fg"
+                value="#000000">
+            </div>
+            <button class="btn" id="btnSave" onclick="saveImage()">Save</button>
         </div>
         <div id="sketch"></div>
     </main>
