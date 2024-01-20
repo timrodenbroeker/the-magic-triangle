@@ -1,30 +1,46 @@
 <head>
-    <title>The Magic Triangle</title>
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="style.css">
-
+  <title>The Magic Triangle</title>
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <main>
-        <div id="ui">
-            <textarea id="title" rows="3" placeholder="title">title</textarea>
-            <textarea id="rule1" rows="3" placeholder="rule 1">rule 1</textarea>
-            <textarea id="rule2" rows="3" placeholder="rule 2">rule 2</textarea>
-            <!-- <textarea id="rule3" placeholder="rule 3"></textarea> -->
+  <main>
+    <div id="ui">
+      <div>
+        <input
+          type="range"
+          min="30"
+          max="60"
+          value="45"
+          class="slider"
+          id="txtSize"
+        />
+        <textarea id="title" rows="3" placeholder="title">title</textarea>
+        <textarea id="rule1" rows="3" placeholder="rule 1">rule 1</textarea>
+        <textarea id="rule2" rows="3" placeholder="rule 2">rule 2</textarea>
+        <textarea id="rule3" rows="3" placeholder="rule 3">rule 3</textarea>
 
-            <div style="display:flex;">
-                <input type="color" id="bg" name="bg"
-                value="#FFFF00">
-                <input type="color" id="fg" name="fg"
-                value="#000000">
-            </div>
-            <button class="btn" id="btnSave" onclick="saveImage()">Save</button>
+        <div style="display: flex">
+          <input
+            type="color"
+            id="BACKGROUND"
+            name="BACKGROUND"
+            value="#f1f1f1"
+          />
+          <input
+            type="color"
+            id="FOREGROUND"
+            name="FOREGROUND"
+            value="#000000"
+          />
         </div>
-        <div id="sketch"></div>
-    </main>
+        <button class="btn" id="btnSave" onclick="saveImage()">Save</button>
+      </div>
+    </div>
+    <div id="sketch"></div>
+  </main>
 
-    <script src="vendor/p5.min.js"></script>
-    <script src="app.js"></script>
-
+  <script src=" https://cdn.jsdelivr.net/npm/p5@1.8.0/lib/p5.min.js "></script>
+  <script src="app.js"></script>
 </body>

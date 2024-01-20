@@ -1,96 +1,130 @@
-
-  @font-face {
-    font-family: "nimbus";
-    src: url("./fonts/nimbus.woff2") format("woff2"),
-        url("./fonts/nimbus.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+@font-face {
+  font-family: "nimbus";
+  src: url("./fonts/nimbus.woff2") format("woff2"),
+    url("./fonts/nimbus.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body, html {
-    margin: 0;
-    font-family: "nimbus",sans-serif;
+body,
+html {
+  margin: 0;
+  font-family: "nimbus", sans-serif;
 }
 
-input, textarea {
-    font-family: "nimbus",sans-serif;
+* {
+  font-size: 20px;
+}
+
+input,
+textarea {
+  font-family: "nimbus", sans-serif;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    width: 100%;
-    height: 100vh;
-
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  width: 100%;
+  height: 100vh;
 }
 
 #ui {
-    padding: 15px;
-    position: relative;
+  padding: 15px;
+  background: #f1f1f1;
 }
 
 #sketch {
-    background: #FFFFFF;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-
+  background: #f1f1f1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 
 canvas {
-    width: 100%;
-
+  width: 100%;
 }
 
 textarea {
-    width: 100%;
+  width: 100%;
 }
 
 textarea {
-    resize: none;
-  }
-
-  
-input, textarea, button {
-    outline: none;
-    border:0;
+  resize: none;
 }
 
-input, textarea {
-    padding: 5px;
-background: #f1f1f1;
+input,
+textarea,
+button {
+  outline: none;
+  border: 0;
+}
+
+input,
+textarea {
+  padding: 5px;
+  border: 1px solid black;
+  background: #f1f1f1;
 }
 
 button {
-
 }
 
 .btn {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 #btnSave {
-    background: #00FF00;
-    cursor: pointer;
-    position: fixed;
-    top:15px;
-    right: 15px;
-    color: black;
+  background: #00ff00;
+  cursor: pointer;
+  color: black;
+  width: 100%;
+  padding: 20px;
 }
 
-
 #btnSave:hover {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 ::-moz-color-swatch {
-    border-color: transparent;
+  border-color: transparent;
+}
+
+#FOREGROUND,
+#BACKGROUND {
+  border: 1px solid black;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin: 10px 0 20px 0;
+}
+
+#txtSize {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+#FOREGROUND,
+#BACKGROUND {
+  padding: 0;
+  outline: 0;
+  border: none;
+  box-shadow: 0;
+  width: 40px;
+  height: 40px;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
 }

@@ -1,122 +1,105 @@
 let font;
 let saveImageBool = false;
 
-
-
-function preload(){
-    font = loadFont('fonts/nimbus.otf');
+function preload() {
+  font = loadFont("fonts/nimbus.otf");
 }
 
-function setup(){
-    var canvas = createCanvas(800, 600);
-    canvas.parent('sketch');
-    rectMode(CENTER);
-    
+function setup() {
+  var canvas = createCanvas(800, 800);
+  canvas.parent("sketch");
+  rectMode(CENTER);
 }
 
-function draw(){
+function draw() {
+  // Get data
+  var title = document.getElementById("title").value;
+  var rule1 = document.getElementById("rule1").value;
+  var rule2 = document.getElementById("rule2").value;
+  var rule3 = document.getElementById("rule3").value;
+  var txtSize = parseInt(document.getElementById("txtSize").value);
 
-    // Get data
-    var title = document.getElementById("title").value;
-    var rule1 = document.getElementById("rule1").value;
-    var rule2 = document.getElementById("rule2").value;
-    // var rule3 = document.getElementById("rule3").value;
-    
-    let fg = document.getElementById("fg").value;
-    let bg = document.getElementById("bg").value;
+  console.log(txtSize);
+  let BACKGROUND = document.getElementById("BACKGROUND").value;
+  let FOREGROUND = document.getElementById("FOREGROUND").value;
 
-    background("#FFFFFF");
- 
-    var magX = width*0.4;
-    var magY = width*0.25;
-    
-    noFill();
-    // stroke(0);
+  background(BACKGROUND);
 
-    push();
-    translate(0,-height*0.06);
+  var magX = width * 0.4;
+  var magY = width * 0.25;
 
-    // Triangle
-    push();
-    translate(width/2,height/2-5);
-    strokeWeight(2);
-    triangle(0,-magY,magX,magY,-magX,magY);
-    pop();
+  noFill();
+  // stroke(0);
 
-    // Define Font Styling
-    textFont(font);
-    textAlign(CENTER,CENTER);
+  // Define Font Styling
+  textFont(font);
+  textAlign(CENTER, CENTER);
 
-    var fontSize = 50;
-    var lineHeight = 45;
+  var lineHeight = 45;
 
-    textSize(fontSize);
-    textLeading(lineHeight);
+  textSize(txtSize);
+  textLeading(lineHeight);
 
-    noStroke();
-    fill(0);
+  noStroke();
+  fill(FOREGROUND);
 
-    // project title
-    push();
-    translate(width/2,height*0.65);
-    text(title.toUpperCase(),0,0);
-    pop();
+  // project title
+  push();
+  translate(0, -30);
 
-    var offsetX = width * 0.22;
-    textSize(50);
-    var rotation = 52;
+  push();
+  translate(width / 2, height * 0.6);
+  text(title.toUpperCase(), 0, 0);
+  pop();
 
-    textAlign(CENTER,BOTTOM);
+  var offsetX = width * 0.22;
 
-    // rule 1
-    push();
-    translate(width * 0.5 - offsetX, height * 0.50);
-    rotate(radians(-rotation));
-    text(rule1,0,0);
-    pop();
+  textSize(txtSize);
+  var rotation = 52;
 
+  textAlign(CENTER, BOTTOM);
 
+  document.getElementById("sketch").style.background = BACKGROUND;
 
-    // rule 2
-    push();
-    translate(width * 0.5 + offsetX, height * 0.50);
-    rotate(radians(rotation));
-    text(rule2,0,0);
-    pop();
+  // rule 1
+  push();
+  translate(width * 0.5 - offsetX, height * 0.5);
+  rotate(radians(-rotation));
+  text(rule1, 0, 0);
+  pop();
 
+  // rule 2
+  push();
+  translate(width * 0.5 + offsetX, height * 0.5);
+  rotate(radians(rotation));
+  text(rule2, 0, 0);
+  pop();
 
-    textAlign(CENTER,TOP);
-    // rule 3
-    push();
-    translate(width/2,height/2+240);
+  // rule 3
+  push();
+  textAlign(CENTER, TOP);
+  push();
+  translate(width / 2, height / 2 + 220);
+  text(rule3, 0, 0);
+  pop();
 
+  // Triangle
+  push();
+  translate(width / 2, height / 2 - 5);
+  strokeWeight(2);
+  noFill();
+  stroke(FOREGROUND);
+  triangle(0, -magY, magX, magY, -magX, magY);
+  pop();
+  pop();
 
-    let rectSize = 60;
-    strokeWeight(1);
-    // stroke(0);
-    fill(0);
-    fill(bg);
-    rect(- rectSize / 2,0,rectSize,rectSize);
-    fill(fg);
-    rect(rectSize / 2,0,rectSize,rectSize);
-    pop();
-    translate(width*0.5, height*0.85);
-    // text(rule3,0,0);
-    pop();
-
-      
-
-
-
-
-    if (saveImageBool == true) {
-        save("magic_triangle_" + title + ".png");
-        saveImageBool = false;
-    }
-
+  if (saveImageBool == true) {
+    save("magic-triangle-" + title + ".png");
+    saveImageBool = false;
+  }
 }
 
-function saveImage(){
-    console.log("image saved");
-    saveImageBool = true;
+function saveImage() {
+  console.log("image saved");
+  saveImageBool = true;
 }
