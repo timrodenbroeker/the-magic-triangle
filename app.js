@@ -35,7 +35,7 @@ function draw() {
   textFont(font);
   textAlign(CENTER, CENTER);
 
-  var lineHeight = 45;
+  var lineHeight = txtSize;
 
   textSize(txtSize);
   textLeading(lineHeight);
